@@ -1,4 +1,6 @@
 * {
+  
+  font-family: 'roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -55,10 +57,18 @@
     padding-bottom: 20px;
     margin-right: 20px;
   }
+  #Portfolio a{
+    color: inherit;
+    text-decoration: none;
+  }
   #Services{
     margin-top: 25px;
     padding-bottom: 20px;
     margin-right: 20px;
+  }
+  #Services a{
+    color: inherit;
+    text-decoration: none;
   }
   #About{
     margin-top: 25px;
@@ -69,21 +79,25 @@
     color: inherit;
     text-decoration: none;
   }
-  #Resources{
-    margin-top: 25px;
-    padding-bottom: 20px;
-    margin-right: 20px;
-  }
   #Tutorials{
     margin-top: 25px;
     padding-bottom: 20px;
     margin-right: 20px;
   }
+  #Tutorials a{
+    color: inherit;
+    text-decoration: none;
+  }
+  
   #Contact{
     padding-right: 20px;
     margin-top: 25px;
     padding-bottom: 20px;
     margin-right: 20px;
+  }
+  #Contact a{
+    color: inherit;
+    text-decoration: none;
   }
   
   
@@ -150,7 +164,7 @@
   }
 
   .tablet{
-    z-index: 10;
+    z-index: 1;
     position: relative;
   }
 
@@ -917,6 +931,332 @@
   
 }
 
+.contact-btn a{
+  text-decoration: none;
+  color: white;
+  
+}
+
 .contact-btn:hover{
   background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+
+/* contact page */
+.quoter{
+  color: #63707e;
+  margin-left: 14vh;
+  margin-right: 16vh;
+  border-bottom: 2px solid #f5f6f7;
+  font-family: 'roboto', sans-serif;
+  font-size: 200%;
+  padding: 5vh;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  margin: 3vh 16vh 3vh 14vh;
+}
+
+
+.OfficeH {
+  font-family: 'roboto', sans-serif;
+  font-size: 1.4rem;
+  padding: 15px;
+  color: #06BC9B;
+}
+.form-header-contact{
+  background-color: #06BC9B;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.4rem;
+  padding: 35px;
+  color: #fff;
+}
+.item1 {
+  background: #f5f6f7;
+}
+.item1 > p{
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 10px;
+}
+.item1 > div{
+  text-align: center;
+  padding: 10px;
+}
+
+.item2 {
+  text-align: center;
+  width: 100%;
+  margin-left: 25px;
+  padding-bottom: 100px;
+  background: #f5f6f7;
+}
+.item2 > div{
+margin-top: 30px;
+}
+
+.form-input-contact {
+  border-radius: 5px;
+  padding: 15px;
+  width:80%;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  border: 1px solid  #cccccc;
+  font-size: 0.9em;
+}
+.form-input-contact:focus {
+  border: 2px solid  #379683;
+
+}
+.form-privacy-contact{
+  margin-left: 50px;
+  text-align: start;
+  font-family: 'roboto', sans-serif;
+  font-size: 0.90rem;
+  padding: 30px;
+}
+.form-input-contact-message{
+  border-radius: 5px;
+  padding: 50px;
+  width:80%;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  border: 1px solid #cccccc;
+  font-size: 1em;
+}
+.form-input-contact-message:focus {
+  border: 2px solid  #379683;
+
+}
+
+.enquire-btn{
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  padding-left: 3vh;
+  padding-right: 36vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  position: absolute;
+  margin-top: 15vh;
+  margin-left: 5vh;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+  
+}
+
+.enquire-btn:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+.checkbox{
+
+  padding-bottom: 50px;
+  font-size: 1.3rem;
+  margin-left: 80px;
+  float: left;
+}
+.check-label{
+  font-weight: 300!important;
+  color: #525d68;
+  margin-bottom: 0;
+}
+.pro-btn{
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  padding-left: 3vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  position: absolute;
+  margin-top: 2vh;
+  margin-left: -15vh;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+}
+.pro-btn:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+.item1-sub{
+  border-top: 10px solid  #fff;
+}
+
+
+/* menu button */
+
+.menu-container {
+  background-color: #06BC9B;
+  padding: 5px;
+  margin: 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+#list-menu{
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 4, 0.1);
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  background: #f5f6f7;
+  color: #06BC9B;
+  padding: 5%;
+}
+
+#list-menu > h2:hover {
+  color: rgba(82,93,104,.7);
+}
+
+
+/* media query  */
+
+
+
+
+@media only screen and (max-width: 1300px) {
+
+  /* contact page  */
+
+  .contact-container {
+    margin-right: 50%;
+    margin: 0% 15% 0% 5%;
+    display: block;
+  }
+  .item1{
+    display: none;
+  }
+  .enquire-btn{
+    margin-left: unset;
+    margin-top: -5vh;
+    position: relative;
+  }
+  .form-privacy-contact{
+    margin: unset;
+  }
+  .checkbox{
+    margin-left: 5vh;
+  }
+
+  .list-menu{
+    display: none;
+  }
+
+  /* landing page */
+
+  .p2{
+    display: none;
+  }
+  .designCnt{
+    margin: 10%;
+    display: block;
+  }
+ .pencils{
+   padding: auto;
+   margin: 10px auto;
+ }
+ .www{
+  padding: auto;
+  margin: 10px auto;
+}
+.digital{
+  padding: auto;
+  margin: 10px auto;
+}
+.learnP{
+  position: relative;
+}
+.contact-btn{
+  position: relative;
+}
+
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+  nav{
+    margin: 5%;
+  }
+  nav > h2{
+    display: none;
+  }
+  .line{
+    display: none;
+  }
+  .container-me{
+    margin: 5%;
+  }
+  .contact-btn{
+    margin-left: auto;
+    position: relative;
+  }
+  #viewIcon{
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+
+
+.menu-container {
+  display: none;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  body{
+    overflow-x: hidden;
+  }
+  .designCnt{
+    margin: 5%;
+    display: block;
+  }
+
+  .quoter{  
+    font-size: 1.2rem;
+    margin: 5%;
+  }
+  .mediaIcons{
+    margin: 5% auto;
+  }
+  .footer{
+    margin: 0% 10%;
+  }
+  .scroolUpCt{
+    margin-right: 10%;
+  }
+  .enquire-btn{
+    padding: 5% 10%;
+  }
 }
