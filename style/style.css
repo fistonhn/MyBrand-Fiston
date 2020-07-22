@@ -513,48 +513,7 @@
     text-align: center;
   }
 
-  .login{
-    border: none;
-    border-radius: 4px;
-    padding: 2.2vh;
-    font-family: 'roboto', sans-serif;
-    font-size: 1.2rem;
-    width: fit-content;
-    position: absolute;
-    margin-top: 5vh;
-    margin-left: 67vh;
-    color: white;
-    background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c); 
-  }
 
-  .signup{
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    padding: 2.2vh;
-    font-family: 'roboto', sans-serif;
-    font-size: 1.2rem;
-    width: fit-content;
-    position: absolute;
-    margin-top: 5vh;
-    margin-left: -80vh;
-    color: white;
-    background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c); 
-  }
-  .signup a{
-    color: white;
-    text-decoration: none;
-  }
-  .login a{
-    color: white;
-    text-decoration: none;
-  }
-  .login:hover{
-    background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
-  }
-  .signup:hover{
-    background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
-  }
   .p2{
     display: flex;
     margin-top: 3vh;
@@ -1138,12 +1097,141 @@ margin-top: 30px;
 }
 
 
+/* myblog page  */
+
+.post-container {
+  text-align: center;
+  width: 100%;
+  margin-left: 25px;
+  padding-bottom: 100px;
+  margin-top: 5%;
+  background: #f5f6f7;
+}
+.recent-post{
+  margin: 2% 7% 3% 5%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 30px;
+}
+.continue-reading{
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  padding-left: 3vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  position: absolute;
+  margin-top: 3vh;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+  
+}
+
+.continue-reading:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+
+.continue-reading a{
+  text-decoration: none;
+  color: white;
+}
+.quoter-post{
+  color: #63707e;
+  font-family: 'roboto', sans-serif;
+  font-size: 120%;
+  padding: 1vh 3vh;
+  text-align: center;
+}
+.post-header-cntn{
+  margin: 50px;
+  background-color: #06BC9B;
+  padding: 5vh 5vh 5vh 1vh;
+}
+.post-header{
+  padding: 5vh 5vh 5vh 1vh;
+  background-color: #06BC9B;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.post-credit{
+  position: absolute;
+  margin-top: 8vh;
+  margin-left: 2vh;
+  color: #63707e;
+  font-style: italic;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.1rem;
+
+}
+
+.login{
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c); 
+}
+.login a{
+  color: white;
+  text-decoration: none;
+}
+.login:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+
+
+.joinus-btn{
+  margin-top: 2%;
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c); 
+}
+.joinus-btn a{
+  color: white;
+  text-decoration: none;
+}
+.joinus-btn:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+.joinus-body{
+  color: #63707e;
+  margin-left: 14vh;
+  margin-right: 16vh;
+  border-bottom: 2px solid #f5f6f7;
+  margin-top: 2%;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.7rem;
+  padding: 2vh 5vh ;
+  text-align: center;
+}
+
+
+
+
+
 /* media query  */
 
 
 
 
 @media only screen and (max-width: 1300px) {
+  .login-form{
+    margin: 10%;
+  }
+
+  .recent-post{
+    display: block;
+  }
 
   /* contact page  */
 
@@ -1205,6 +1293,7 @@ margin-top: 30px;
 
 @media only screen and (max-width: 800px) {
 
+
   nav{
     margin: 5%;
   }
@@ -1242,6 +1331,10 @@ margin-top: 30px;
     margin: 5%;
     display: block;
   }
+  .joinus-body{
+    font-size: 1.2rem;
+    margin: 5%;
+  }
 
   .quoter{  
     font-size: 1.2rem;
@@ -1254,9 +1347,18 @@ margin-top: 30px;
     margin: 0% 10%;
   }
   .scroolUpCt{
-    margin-right: 10%;
+    margin-right: 25%;
   }
   .enquire-btn{
     padding: 5% 10%;
+  }
+  .continue-reading{
+    position: relative;
+    margin-top: 15vh;
+  }
+  .post-container{
+    border-top: 20px solid  #fff;
+    margin: auto;
+    margin-bottom: -10vh;
   }
 }
