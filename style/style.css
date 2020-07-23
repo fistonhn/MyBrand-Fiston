@@ -873,7 +873,28 @@
   margin: 5vh 16vh 5vh 14vh;
   padding-bottom: 90px;
 }
-
+.abt-btn{
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  padding-left: 3vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  position: absolute;
+  margin-top: 8vh;
+  margin-left: 5vh;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+}
+.abt-btn a{
+  text-decoration: none;
+  color: white;
+  
+}
+.abt-btn:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
 .contact-btn{
   border: none;
   border-radius: 4px;
@@ -887,7 +908,6 @@
   margin-left: 28vh;
   color: white;
   background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
-  
 }
 
 .contact-btn a{
@@ -1214,6 +1234,98 @@ margin-top: 30px;
   padding: 2vh 5vh ;
   text-align: center;
 }
+#privacy{
+  color: #06BC9B;
+}
+
+/* readMore page */
+
+.readMore-post{
+  color: #63707e;
+  font-family: 'roboto', sans-serif;
+  font-size: 120%;
+  padding: 1vh 3vh;
+  padding-top: 3vh;
+  text-align: center;
+}
+.comment-cntn{
+  background-color: khaki;
+  margin-left: 14vh;
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.comment-btn{
+  margin-bottom: 2vh;
+  margin-left: 47vh;
+  margin-top: 2%;
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c); 
+}
+.comment-btn:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+.checkbox-comment{
+  font-size: 1.3rem;
+  margin: 2vh 9vh;
+}
+.form-privacy-comment{
+  text-align: center;
+}
+.form-control-comment{
+  margin: 1vh;
+  text-align: center;
+}
+
+.update-post{
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  padding-left: 3vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  position: absolute;
+  margin-left: 55vh;
+  margin-top: 3vh;
+  color: white;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+  
+}
+
+.update-post:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+.update-post a{
+  text-decoration: none;
+  color: white;
+}
+.recent-comment{
+  margin: 2% 7% 3% 5%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 30px;
+}
+.comment-container {
+  text-align: center;
+  width: 100%;
+  margin-left: 25px;
+  margin-top: 5%;
+  background: #f5f6f7;
+}
+.comment-header{
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  margin: 5vh 11vh -5vh 14vh;
+  border-bottom: 10px solid #eee;
+}
 
 
 
@@ -1225,6 +1337,9 @@ margin-top: 30px;
 
 
 @media only screen and (max-width: 1300px) {
+  .abt-btn{
+    position: relative;
+  }
   .login-form{
     margin: 10%;
   }
@@ -1286,6 +1401,10 @@ margin-top: 30px;
 .contact-btn{
   position: relative;
 }
+.update-post{
+  margin-left: 50%;
+  position: relative;
+}
 
 }
 
@@ -1313,6 +1432,24 @@ margin-top: 30px;
   #viewIcon{
     padding-left: 10px;
   }
+  .recent-comment {
+    margin: 2% 7% 3% 5%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+  }
+  .comment-header{
+    margin: 5%;
+    margin: 3% 5%;
+  }
+  .comment-cntn{
+    width: 70%;
+  }
+
+  .form-privacy-comment{
+    text-align: center;
+  }
+
 }
 
 @media only screen and (min-width: 800px) {
@@ -1321,9 +1458,31 @@ margin-top: 30px;
 .menu-container {
   display: none;
 }
+
 }
 
 @media only screen and (max-width: 600px) {
+  .update-post{
+    margin-left: auto;
+    text-align: center;
+    margin-top: 25%;
+  }
+  .comment-cntn{
+    border-top: 10px solid white;
+    margin-top: -5%;
+    margin-left: 5%;
+    width: 90%;
+  }
+  .recent-comment {
+    margin: 2% 10% 2% 2%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 30px;
+  }
+  .comment-header{
+    margin: 2% 10%;
+  }
+
   body{
     overflow-x: hidden;
   }
@@ -1360,5 +1519,15 @@ margin-top: 30px;
     border-top: 20px solid  #fff;
     margin: auto;
     margin-bottom: -10vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .recent-comment {
+    margin: 2% 12% 2% 2%;
+  }
+  .comment-btn{
+    margin-left: 5%;
+    position: relative;
   }
 }
