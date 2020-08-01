@@ -1326,6 +1326,52 @@ margin-top: 30px;
 
 
 
+/* editing page */
+
+.editing-textarea{
+  color: #63707e;
+  font-family: 'roboto', sans-serif;
+  font-size: 120%;
+  padding: 1vh 2vh;
+  padding-top: 3vh;
+  text-align: center;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.edit-title{
+  border: none;
+  width: 100%;
+  padding: 5vh 5vh 5vh 1vh;
+  background-color: #06BC9B;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.updating-btn{
+  border: none;
+  border-radius: 4px;
+  padding: 2.2vh;
+  padding-left: 3vh;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  width: fit-content;
+  margin-top: 1vh;
+  background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+  color: white;
+  
+}
+
+.updating-btn:hover{
+  background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+.updating-btn a{
+  color: white;
+  text-decoration: none;
+}
+
 
 
 /* media query  */
