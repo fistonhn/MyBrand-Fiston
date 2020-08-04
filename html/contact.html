@@ -53,31 +53,32 @@
         </div>
         <div class="item2">
             <p class="form-header-contact">Have a question? Please enquire below </p>
-            <div>
+            <form id="contact-form"> 
                 <div class="form-control">
-                  <input type="text" class="form-input-contact" placeholder="Name" required>
+                  <input type="text" class="form-input-contact" placeholder="Name" id="contact-name" >
                 </div>
                 <div class="form-control">
-                    <input type="email" class="form-input-contact" placeholder="Email" required>
+                    <input type="email" class="form-input-contact" placeholder="Email" id="contact-email" >
                 </div>
                 <div class="form-control">
-                    <input type="text" class="form-input-contact" placeholder="Website" required>
+                    <input type="text" class="form-input-contact" placeholder="Website" id="contact-website">
                 </div>
                 <div class="form-control">
-                  <input type="number" class="form-input-contact" placeholder="Phone" required>
+                  <input type="number" class="form-input-contact" placeholder="Phone" id="contact-phone">
                 </div>
                 <div class="form-control">
-                    <input type="text" class="form-input-contact-message" placeholder="Message" required>
+                    <input type="text" class="form-input-contact-message" placeholder="Message" id="contact-message" >
                 </div>
+                <div class="alert">Your message has been sent</div> 
                 <div class="form-control">                                
                   <p class="form-privacy-contact">By using this form you agree with the storage and handling of your data by this website. Please  <span id="privacy">read our Privacy Policy</span> for more information on how we handle your data. </p>
-                </div>  
+                </div> 
                 <div class="checkbox">
                   <label class="check-label">I agree</label>
                   <input class="check-input" type="checkbox" value="true"  tabindex="7" class>
                 </div>
-                <button  class="enquire-btn" >Enquire</button>
-            </div>         
+                <button onclick="submitForm();  return false;"  class="enquire-btn" >Enquire</button>
+            </form>         
         </div>
 
       </div>
@@ -114,6 +115,9 @@
       
   
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script src="../script/script.js"></script>
   </body>
 </html>

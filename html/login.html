@@ -33,22 +33,23 @@
         <h2 id="About"><a href="../html/about.html">About</a></h2>
         <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
       </div>
-      <div class="login-form">
+      <form class="login-form">
           <p class="form-header">Login to your account.</p>
+          <div class="alert">You are successful login</div>
           <div class="form-control">
-              <input type="email" class="form-input" placeholder="Email" required>
+              <input id="email-login" type="email" class="form-input" placeholder="Email" >
           </div>
           <div class="form-control">
-              <input type="password" class="form-input" placeholder="Password" required>
+              <input id="password-login" type="password" class="form-input" placeholder="Password" >
           </div>
           <div class="form-control">
-             <button class="btn ">LOG IN</button>
+             <button onclick="login();  return false;" class="btn ">LOG IN</button>
           </div>
           
-          <div class="signup-link" >Don't you have an Account?
+          <div class="signup-link" >Don't have an Account?
               <a href="./register.html">Sign Up</a>
           </div>             
-      </div>
+      </form>
      
       <div class="footerContainer">
         <div class="footer">
@@ -81,6 +82,9 @@
       
   
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script src="../script/script.js"></script>
   </body>
 </html>
