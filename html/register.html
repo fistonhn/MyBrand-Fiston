@@ -31,28 +31,29 @@
         <h2 id="About"><a href="../html/about.html">About</a></h2>
         <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
       </div> 
-      <div class="login-form">
+      <form id="signupForm" class="login-form">
           <p class="form-header">Create a new account </p>
+          <div class="alert-signup">User successful created</div> 
           <div class="form-control">
-            <input type="text" class="form-input" placeholder="Name" required>
+            <input id="name-signup" type="text" class="form-input" placeholder="Name" required>
           </div>
           <div class="form-control">
-              <input type="email" class="form-input" placeholder="Email" required>
+              <input id="email-signup" type="email" class="form-input" placeholder="Email" required>
           </div>
           <div class="form-control">
-              <input type="password" class="form-input" placeholder="Password" required>
+              <input id="password-signup" type="password" class="form-input" placeholder="Password" required>
           </div>
           <div class="form-control">
-            <input type="password" class="form-input" placeholder="Confirm Password" required>
+            <input id="confirm-signup" type="password" class="form-input" placeholder="Confirm Password" required>
           </div>
           <div class="form-control">
-            <button class="btn ">SIGN UP</button>
+            <button  onclick="signup();  return false;" class="btn ">SIGN UP</button>
           </div>
           
-          <div class="signup-link" >Do you have an Account?
+          <div class="signup-link" >you have an Account?
               <a href="./login.html">Login</a>
           </div>             
-      </div>
+      </form>
      
       <div class="footerContainer">
         <div class="footer">
@@ -85,6 +86,9 @@
       
   
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script src="../script/script.js"></script>
   </body>
 </html>

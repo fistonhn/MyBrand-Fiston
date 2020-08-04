@@ -771,7 +771,13 @@
 }
 
 /* login page */
-
+.alert-signup{
+  text-align: center;
+  padding: 10px;
+  background-color: #79c879;
+  color: #fff;
+  display: none;
+}
 #home-login{
  
   text-decoration: none;
@@ -918,6 +924,13 @@
 }
 
 /* contact page */
+.alert{
+  text-align: center;
+  padding: 10px;
+  background-color: #79c879;
+  color: #fff;
+  display: none;
+}
 .quoter{
   color: #63707e;
   margin-left: 14vh;
