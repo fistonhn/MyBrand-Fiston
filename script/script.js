@@ -11,10 +11,10 @@
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-  // var messagesRef = firebase.database().ref('messages')
   var db=firebase.firestore();
   const auth = firebase.auth();
  
+  // contact page
 
 function submitForm(e) {
   
@@ -116,15 +116,36 @@ function submitForm(e) {
                   },3000);
 
     })
-
-
   }
-
-
 
   // function to get form values
   function getInput(id){
     return document.getElementById(id).value;
+}
+
+
+// comment
+
+function submitComment() {
+
+  const userComment = document.getElementById('commenting').value;
+
+  db.collection('comments').doc().set({
+    comments: userComment
+  })
+  .then(function (){
+
+          // show alert
+          document.querySelector('.alert-comment').style.display = 'block';
+  
+          setTimeout(function(){
+      
+              document.querySelector('.alert-comment').style.display = 'none';
+      
+          },3000);
+  })
+  .catch(function (error){window.alert(error)})
+  
 }
 
 
@@ -138,9 +159,7 @@ function submitForm(e) {
 
 
 
-
-
-
+// toggle button
 
   function myFunction(x) {
     x.classList.toggle("change");
