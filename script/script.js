@@ -149,6 +149,34 @@ function submitComment() {
 }
 
 
+// posts
+
+function submitPost() {
+
+  const postHeader = document.getElementById('post-header').value;
+  const postBody = document.getElementById('post-body').value;
+
+
+  db.collection('posts').doc().set({
+    title: postHeader,
+    content: postBody
+  })
+  .then(function (){
+
+          // show alert
+          document.querySelector('.alert-posting').style.display = 'block';
+  
+          setTimeout(function(){
+      
+              document.querySelector('.alert-posting').style.display = 'none';
+              document.querySelector('.newstory-form').reset();
+      
+          },3000);
+  })
+  .catch(function (error){window.alert(error)})
+  
+}
+
 
 
 
@@ -172,4 +200,92 @@ function submitComment() {
 
         list.style.display = "none"; 
     
+  }
+
+  // edit post the modal
+var modalEditing = document.getElementById("myModalEditing");
+
+// Get the button that opens the modal
+var btnEditing = document.getElementById("myBtnEdit");
+
+// Get the <span> element that closes the modal
+var spanEditing = document.getElementById("closeEditing");
+
+// When the user clicks the button, open the modal 
+btnEditing.onclick = function() {
+  modalEditing.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanEditing.onclick = function() {
+  modalEditing.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  window.alert('kkk')
+  if (event.target == modalEditing) {
+    modalEditing.style.display = "none";
+  }
+}
+
+
+
+
+
+
+// add post modal
+
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+
+
+  // view post modal
+
+  var modalView = document.getElementById("myModalView");
+
+  // Get the button that opens the modal
+  var btnView = document.getElementById("myBtnView");
+  
+  // Get the <span> element that closes the modal
+  var spanView = document.getElementsByClassName("closeView")[0];
+  
+  // When the user clicks the button, open the modal 
+  btnView.onclick = function() {
+    modalView.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  spanView.onclick = function() {
+    modalView.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modalView) {
+      modalView.style.display = "none";
+    }
   }
