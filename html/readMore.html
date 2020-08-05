@@ -67,15 +67,16 @@
 
         <div class="comment-cntn">
             <p class="form-header-contact">Write your comment below </p>
+            <div class="alert-comment">Comment successful sent</div> 
             <div class="form-control-comment">
-                <input type="text" class="form-input-contact-message" placeholder="Message" required>
+                <textarea id="commenting" rows="7" cols="60" name="comment" form="usrform" class="form-input-comment-message" ></textarea>
             </div>                            
                 <p class="form-privacy-comment">By commenting to this post you agree with our <span id="privacy"> community terms and conditions </span> </p>
             <div class="checkbox-comment">
                 <label class="check-label">I agree</label>
                 <input class="check-input" type="checkbox" value="true"  tabindex="7" class>
             </div>
-            <button  class="comment-btn" >Comment</button>
+            <button onclick="submitComment(); return false"  class="comment-btn" >Comment</button>
         </div>
 
         <p class="comment-header">
@@ -158,6 +159,9 @@
       </div>
       
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script src="../script/script.js"></script>
   </body>
 </html>

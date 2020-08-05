@@ -1249,7 +1249,26 @@ margin-top: 30px;
 }
 
 /* readMore page */
+.alert-comment{
+  text-align: center;
+  padding: 10px;
+  background-color: #79c879;
+  color: #fff;
+  display: none;
+}
+.form-input-comment-message{
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  border: 1px solid #cccccc;
+  font-size: 1em;
+}
+.form-input-comment-message:focus {
+  border: 2px solid  #379683;
 
+}
 .readMore-post{
   color: #63707e;
   font-family: 'roboto', sans-serif;
