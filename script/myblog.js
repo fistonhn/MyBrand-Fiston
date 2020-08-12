@@ -16,9 +16,6 @@
     const auth = firebase.auth();
 
 
-// myblog page 
-
-
   // get all posts
 
   const recentPosts = document.getElementById('recentPctn')
@@ -32,6 +29,65 @@
  
 function readmore(){
   window.location.href = "../html/readMore.html";
+}
+
+
+
+
+// create a post
+function submitPost() {
+
+  const postHeader = document.getElementById('post-header').value;
+  const postBody = document.getElementById('post-body').value;
+
+
+  db.collection('posts').doc().set({
+    title: postHeader,
+    content: postBody
+  })
+  .then(function (){
+
+          // show alert
+          document.querySelector('.alert-posting').style.display = 'block';
+  
+          setTimeout(function(){
+      
+              document.querySelector('.alert-posting').style.display = 'none';
+              window.location.reload()
+      
+          },3000);
+  })
+  .catch(function (error){window.alert(error)})
+  
+}
+
+// add post modal
+
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+  
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+const closeAddPost = document.querySelector(".closeAddPost");
+
+closeAddPost.onclick = function() {
+
+  modal.style.display = "none";
+}
+
+function logout(){
+
+firebase.auth().signOut().then(function() {
+
+  window.location.href = '../html/login.html';
+
+
+}).catch(function(error) {
+
+});
 }
 
 
