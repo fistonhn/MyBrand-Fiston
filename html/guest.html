@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My brand</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+        <nav>
+            <div> <a href="../index.html"><img src="../assets/mybrandLogo.png" alt="logo" width="160" height="160" /></a></div>
+            <h2 id="home-login"><a href="../index.html">Home</a></h2>
+            <h2 id="Portfolio"><a href="../html/portfolio.html">Portfolio</a></h2>
+            <h2 id="Services"><a href="../html/services.html">Services</a></h2>
+            <h2 id="About"><a href="../html/about.html">About</a></h2>
+            <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
+            <h2 id="Contact">  <button onclick="logout()" class="joinus-btn" >Logout</button></h2>
+            <div onclick="myFunction(this)" class="menu-container" >
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div> 
+      
+          </nav> 
+    
+          <div id="list-menu">
+            <h2 id="About"><a href="../index.html">Home</a></h2>
+            <h2 id="Portfolio"><a href="../html/portfolio.html">Portfolio</a></h2>
+            <h2 id="Services"><a href="../html/services.html">Services</a></h2>
+            <h2 id="About"><a href="../html/about.html">About</a></h2>
+            <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
+            <h2 id="Contact">  <button onclick="logout()" class="joinus-btn" >Logout</button></h2>
+          </div>
+    
+          <div class="admin-btn"><button id="myBtn" class="button button0">Add post</button> </div>
+    
+                <!-- The Modal create post -->
+            <div id="myModal" class="modal">
+    
+                <div class="modal-content">
+                <span class="closeAddPost">&times;</span>
+                <form class="newstory-form">
+                    <div class="alert-posting">Post successful created</div> 
+                    <div>
+                        <input id="post-header" class="post__title"  type="text"  placeholder="Title">
+                    </div>
+                    <div>
+                        <textarea id="post-body"  class="post__content" cols="20" rows="10" placeholder="Pen down your experience"></textarea>
+                    </div>                  
+                    <button onclick="submitPost(); return false" class="joinus-btn" type="submit">Save post </button>                   
+                </form>
+                </div>
+            
+            </div>
+
+        <div class="recentBlog-post">
+            <div id="recentPctn" class="post-container">
+
+            </div>      
+        </div>   
+      
+
+    </div>
+
+     
+     
+      <div class="footerContainer">
+        <div class="footer">
+          <div class="mediaIcons">
+            <i id="bg-fb" class="fa fa-facebook"></i> 
+            <i id="bg-twtr" class="fa fa-twitter"></i> 
+            <i id="bg-gg" class="fa fa-google-plus"></i>
+            <i id="bg-lnkin" class="fa fa-linkedin"></i>
+          </div>
+          <div class="line">
+            <p>Home : </p>
+            <p>: Portfolio :  </p>
+            <p>: Services :</p>
+            <p>: About :</p>
+            <p>: Resources :</p>
+            <p>: Tutorials :</p>
+            <p>: Contact</p>
+          </div>
+          <div class="line">
+            <p>Privacy Policy :</p>
+            <p>: Cookie Policy :</p>
+            <p>: Terms & Conditions</p>
+          </div>
+          <p class="credit">Copyright © 2020&nbsp;HN~Fiston&nbsp;•&nbsp;Kigali based Freelance Web Designer & Developer</p>
+          <div class="scroolUpCt" >
+            <div class="triangle-up"><i id="trglIcon" class="fa fa-arrow-up"></i></div>
+          </div>        
+        </div>
+      </div>
+      
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="../script/myblog.js"></script>
+  </body>
+</html>
