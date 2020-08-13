@@ -102,54 +102,9 @@ firebase.auth().signOut().then(function() {
 }
 
 
-// comment
-
-// add reply
-document.querySelector('#add-reply').addEventListener('submit', (e) => {
-  e.preventDefault();
-  let replyContents = document.querySelector('#reply-contents');
-  let postRef = db.collection('posts').doc(docRef.id);
-  let setWithMerge = postRef.update({
-      comments: firebase.firestore.FieldValue.arrayUnion({
-          author: userEmail,
-          contents: replyContents.value,
-          'replied-at': new Date(),
-      }),
-  });
-  setWithMerge
-      .then((res) => {
-          console.log('added');
-          window.location.reload();
-      })
-      .catch((err) => console.log(err));
-});
 
 
 
-
-
-
-function submitComment() {
-
-  const userComment = document.getElementById('commenting').value;
-
-  db.collection('comments').doc().set({
-    comments: userComment
-  })
-  .then(function (){
-
-          // show alert
-          document.querySelector('.alert-comment').style.display = 'block';
-  
-          setTimeout(function(){
-      
-              document.querySelector('.alert-comment').style.display = 'none';
-      
-          },3000);
-  })
-  .catch(function (error){window.alert(error)})
-  
-}
 
 
 
