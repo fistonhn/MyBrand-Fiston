@@ -16,7 +16,6 @@
         <h2 id="Services"><a href="../html/services.html">Services</a></h2>
         <h2 id="About"><a href="../html/about.html">About</a></h2>
         <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
-        <h2 id="Contact">  <button class="joinus-btn" ><a href="../html/admin.html">Login</a></button></h2>
         <div onclick="myFunction(this)" class="menu-container" >
           <div class="bar1"></div>
           <div class="bar2"></div>
@@ -31,37 +30,15 @@
         <h2 id="Services"><a href="../html/services.html">Services</a></h2>
         <h2 id="About"><a href="../html/about.html">About</a></h2>
         <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
-        <h2 id="Contact">  <button class="joinus-btn" ><a href="../html/admin.html">Login</a></button></h2>
       </div>
 
-        <div class="recent-post">
+        <div id="onePost"  class="recent-post">
             <div class="post-container">
-                <p class="post-header">What browser am I using? </p>
-                <div class="readMore-post">
-                    <p>Each website has a unique domain name to identify it from the rest. For example, the domain name of this website is www.emilyridge.ie. A website host or server is a space 
-                        on the internet in which we can put your website so that it will be visible to the public.
-                        Understanding the role of an external hosting company when embarking on a website project can be a little overwhelming. You are suddenly faced with technology lingo that you may not have ever come across. Purchasing a domain name and hosting package is essential for every website project so we aim to explain the roles of each service to ensure you understand exactly why you need to make these purchases.
 
-                        Domain Name / Web Address
-                        Each website has a unique domain name to identify it from the rest. For example, the domain name of this website is www.emilyridge.ie. Domain names are also sometimes called ‘web addresses’ or ‘URLs’. Having a unique domain name for your company allows your audience to search for your website through Google or type it manually in your browser’s search bar. In order to obtain a domain name for your company, you will need to contact a hosting company who will set everything up for you.
                         
-                        Hosting Package
-                        Once you have obtained your domain name, you will need to purchase a hosting package. A website host or server is a space on the internet in which we can put your website’s files so that it will be visible to the public. It’s similar to having a folder on your computer’s desktop with files inside. A website host is simply a folder on your hosting company’s online server which contains your website’s files and makes them visible to the public.
-                        
-                        Recommended Hosting Packages
-                        Most websites will work perfectly on Blacknight’s Minimus (Linux) hosting plan. If you do not have a hosting package I would recommend that you go with Blacknight as they have excellent customer support and there are never any issues with them.
-                        
-                        Online Store / eCommerce Hosting
-                        If you are planning to sell products on your website using an eCommerce solution, Blacknight’s Minimus (Linux) hosting plan will also suit you perfectly if you have less than 50 products. However, if you are planning to sell a larger number of products or will have a high volume of people visiting your website then you should opt for Cloud hosting. If you’re unsure which hosting option is best for you please contact us before making a purchase.
-                        
-                        SSL Certificate
-                        If you are planning to allow your customers to purchase products on your website using a credit card then you will be required to have an SSL Certificate. An SSL certificate can be thought of as a lock-box for your data. It doesn’t make it any harder for anyone to obtain the data but it encrypts the data to the point that nobody can understand it. In addition to encrypting data, the SSL certificate ensures visitors that your business is legitimate, and will not attempt to defraud them in any way. You will also require a Dedicated IP / Static IP in conjunction with the SSL Certificate.</p>
-                        <p class="post-credit">By jules ntare</p>
-                  </div>
+            </div>
                   
-        
-                <button  class="update-post" ><a href="../html/login.html">Update post</a><i id="viewIcon" class="fa fa-chevron-circle-right"></i></button>
-
+      
             </div>    
         </div>
 
@@ -69,7 +46,10 @@
             <p class="form-header-contact">Write your comment below </p>
             <div class="alert-comment">Comment successful sent</div> 
             <div class="form-control-comment">
-                <textarea id="commenting" rows="7" cols="60" name="comment" form="usrform" class="form-input-comment-message" ></textarea>
+              <div class="form-control">
+                <input type="text" class="form-input-contact" placeholder="Name" id="comment-name" >
+              </div>
+                <textarea id="commenting" rows="5" cols="60" placeholder="comment" form="usrform" class="form-input-comment-message" ></textarea>
             </div>                            
                 <p class="form-privacy-comment">By commenting to this post you agree with our <span id="privacy"> community terms and conditions </span> </p>
             <div class="checkbox-comment">
@@ -83,45 +63,14 @@
             Recent comment
         </p>
 
-        <div class="recent-comment">
-            <div class="comment-container">
-                <p class="post-header">By jules ntare</p>
-                <div class="quoter-post">
-                    <p>Each website has a unique domain name to identify it from the rest. </p>
-                </div>
-            </div>    
-            <div class="comment-container">
-                <p class="post-header">By HN Fiston</p>
-                <div class="quoter-post">
-                  <p>Each website has a unique domain name to identify it from the rest.</p>
-                </div>
-            </div> 
+        <div id="commentCtn" class="recent-comment">
+  
+              
+        </div>
 
-            <div class="comment-container">
-              <p class="post-header">By jules ntare</p>
-              <div class="quoter-post">
-                  <p>Each website has a unique domain name to identify it from the rest.</p>
-              </div>
-          </div>    
-          <div class="comment-container">
-              <p class="post-header">By HN Fiston</p>
-              <div class="quoter-post">
-                <p>Each website has a unique domain name to identify it from the rest.</p>
-              </div>
-          </div> 
-
-          <div class="comment-container">
-              <p class="post-header">By jules ntare</p>
-              <div class="quoter-post">
-                <p>Each website has a unique domain name to identify it from the rest.</p>
-              </div>
-          </div>    
-          <div class="comment-container">
-            <p class="post-header">By HN Fiston</p>
-            <div class="quoter-post">
-            <p>Each website has a unique domain name to identify it from the rest.</p>
-            </div>
-          </div>    
+        <div id="noComment" class="recent-comment">
+  
+              
         </div>
     
         
@@ -162,6 +111,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-    <script src="../script/script.js"></script>
+    <script src="../script/readmore.js"></script>
   </body>
 </html>

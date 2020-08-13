@@ -23,13 +23,38 @@
   db.collection("posts").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
  
-      recentPosts.innerHTML += "<p class='post-header'> "+ doc.data().title +" </p>" + "<div class='quoter-post'> "+ doc.data().content + " <button  onclick='readmore()' class='continue-reading' > "+ 'Continue Reading' +"<i id='viewIcon' class='fa fa-chevron-circle-right'></i></button> </div>" 
+      recentPosts.innerHTML += "<p class='post-header'> "+ doc.data().title +" </p>" + "<div class='quoter-post'> "+ doc.data().content + " <button id='"+ doc.id +"' onclick='viewContent(event)' class='continue-reading' > "+ 'Continue Reading' +"<i id='viewIcon' class='fa fa-chevron-circle-right'></i></button> </div>" 
      });
  });
  
-function readmore(){
-  window.location.href = "../html/readMore.html";
-}
+  
+
+
+// view a single post from firestore 
+function viewContent(event){
+
+  const id = event.target.getAttribute('id');
+  window.localStorage.setItem("id", id);
+
+  var docRef = db.collection("posts").doc(id);
+  
+  docRef.get().then(function(doc) {
+    if (doc.exists) {
+      const postOne = document.querySelector('.post-container')
+
+        // postOne.innerHTML += "<p class='post-header'> "+ doc.data().title +" </p>" + "<div class ='readMore-post'> "+ doc.data().content+" </div>"
+  
+        window.location.href = "../html/readMore.html";
+      } else {
+  
+      window.alert("No such document!");
+    }
+  }).catch(function(error) {
+  window.alert("Error getting document:", error);
+  });
+  
+  }
+  
 
 
 

@@ -1186,7 +1186,8 @@ margin-top: 30px;
   padding: 5vh 5vh 5vh 1vh;
 }
 .post-header{
-  padding: 5vh 5vh 5vh 1vh;
+  border-top: 15px solid white;
+  padding: 2vh;
   background-color: #06BC9B;
   font-family: 'roboto', sans-serif;
   font-size: 1.4rem;
