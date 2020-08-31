@@ -41,23 +41,13 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 
-  // firebase.auth().onAuthStateChanged(function(user) {
-  //   if (user) {
-
-  //     document.getElementById('wrapper-admin').style.display = 'block';  
-  //     document.getElementById('wrapper-login').style.display = 'none';
-
-  //   } else {
-  //    document.getElementById('wrapper-login').style.display = 'block';    
-  //    document.getElementById('wrapper-admin').style.display = 'none';  
-  //   }
-  // })
-
 
   function login(){
 
       const email = document.getElementById('email-login').value;
       const password = document.getElementById('password-login').value;
+
+      window.localStorage.setItem("email", email);
 
       firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
    

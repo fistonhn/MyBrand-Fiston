@@ -18,6 +18,7 @@ var firebaseConfig = {
 // logout a user
 
 function logout(){
+    window.localStorage.removeItem('email');
     window.location.href = '../html/login.html';
     console.log("Successfull logout");
   firebase.auth().signOut().then(function() {
@@ -27,7 +28,8 @@ function logout(){
   });
   }
 
-  
+  const userEmail = window.localStorage.getItem('email');
+ 
   
 // create a post
 function submitPost() {
@@ -37,6 +39,7 @@ function submitPost() {
   
   
     db.collection('posts').doc().set({
+      email: userEmail,
       title: postHeader,
       content: postBody
     })
@@ -55,21 +58,6 @@ function submitPost() {
     .catch(function (error){window.alert(error)})
     
   }
-  
-  
-    // get all messages
-  
-    const messageList = document.getElementById('allMessages')
-  
-    db.collection("messages").get().then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-  
-        messageList.innerHTML += "<div class='comment-container'> <p class='post-header'>" + doc.data().name +" " + doc.data().email +" </p>  <div class='quoter-post'> "+ doc.data().message +" </div> </div>"
-  
-       });
-  });
-  
-  
   
   
   // add post modal
@@ -91,51 +79,29 @@ function submitPost() {
   
   
   
-    // view messages modal
-  
-    var modalMessage = document.getElementById("myModalMessage");
-  
-    var btnMessage = document.getElementById("myBtnMessage");
-    
-    var spanMessage = document.querySelector(".closeMessagesContainer");
-  
-    btnMessage.onclick = function() {
-      modalMessage.style.display = "block";
-    }
-  
-    spanMessage.onclick = function() {
-      modalMessage.style.display = "none";
-    }
-    
-    window.onclick = function(event) {
-      if (event.target == modalMessage) {
-        modalMessage.style.display = "none";
-      }
-    }
-  
-  
-  
-  
   
     
-    // get all users
+    // get all posts
   
    const postsList = document.getElementById('tableBody')
   
-   db.collection("users").get().then(function(querySnapshot) {
-     querySnapshot.forEach(function(doc) {
-  
-       postsList.innerHTML += "<tr id='"+ doc.id +"'> <td>"+ doc.id +"</td> <td>"+ doc.data().Name +"</td>  <td>"+ doc.data().Email +"</td> <td>"+ doc.data().Role +"</td> <td class='all-btn' > <button  onclick='editContent(event)' class='button button2'>"+ 'Edit' +"</button> <button onclick='deletePost(event)' class='button button3'>"+ 'Delete' +"</button> </td> </tr>" 
+   db.collection("posts").where("email", "==", userEmail).get().then(function(querySnapshot) {
+     querySnapshot.forEach(function(doc) { 
+         
+        document.querySelector('.zeroBlog').style.display = 'none';
+        document.getElementById('tableBlog').style.display = 'block';
+
+       postsList.innerHTML += "<tr id='"+ doc.id +"'> <td>"+ doc.data().title +"</td> <td>"+ doc.data().content +"</td> <td class='all-btn' ><button  onclick='viewContent(event)' class='button button1'> "+ 'View' +" </button> <button  onclick='editContent(event)' class='button button2'>"+ 'Edit' +"</button> <button onclick='deletePost(event)' class='button button3'>"+ 'Delete' +"</button> </td> </tr>" 
       });
   });
   
   
-  // deleting single user
+  // deleting single post
   
   function deletePost(event){
   
     const id = event.target.parentElement.parentElement.getAttribute('id');
-    db.collection('users').doc(id).delete();
+    db.collection('posts').doc(id).delete();
   
      // show alert
      document.querySelector('.alert-deleting ').style.display = 'block';
@@ -148,6 +114,47 @@ function submitPost() {
      },3000);
   
   }
+  
+  
+    // view post modal
+  
+    var modalView = document.getElementById("myModalView");
+  
+    
+    var spanView = document.getElementsByClassName("closeView")[0];
+  
+    spanView.onclick = function() {
+      window.location.reload();
+      modalView.style.display = "none";
+    }
+  
+      
+    function viewContent(event){
+      modalView.style.display = "block";
+  
+    // view a single post from firestore 
+  
+    const id = event.target.parentElement.parentElement.getAttribute('id');
+    var docRef = db.collection("posts").doc(id);
+  
+  docRef.get().then(function(doc) {
+      if (doc.exists) {
+  
+          const postCtn = document.getElementById('ctnPost')
+  
+          postCtn.innerHTML += "<p class='post-header'> "+ doc.data().title +" </p>" + "<div class ='readMore-post'> "+ doc.data().content+" </div>"
+  
+        } else {
+  
+        window.alert("No such document!");
+      }
+  }).catch(function(error) {
+    window.alert("Error getting document:", error);
+  });
+  
+    }
+    
+  
   
   
   
@@ -163,18 +170,16 @@ function submitPost() {
     const id = event.target.parentElement.parentElement.getAttribute('id');
     window.localStorage.setItem("id", id);
   
-    var docRef = db.collection("users").doc(id);
+    var docRef = db.collection("posts").doc(id);
   
   docRef.get().then(function(doc) {
       if (doc.exists) {
   
         const titleEdit = document.getElementById('titleEdit')
-        const titleEdit2 = document.getElementById('titleEdit2')
-        const titleEdit3 = document.getElementById('titleEdit3')
+        const textArea = document.getElementById('myTextArea')
   
-        titleEdit.value=doc.data().Name;
-        titleEdit2.value=doc.data().Email;
-        titleEdit3.value=doc.data().Role;
+        titleEdit.value=doc.data().title;
+        textArea.value=doc.data().content;
   
       } else {
   
@@ -202,13 +207,11 @@ function submitPost() {
       
       const docId = window.localStorage.getItem('id');
       const titleEdit = document.getElementById('titleEdit').value
-      const titleEdit2 = document.getElementById('titleEdit2').value
-      const titleEdit3 = document.getElementById('titleEdit3').value
+      const textArea = document.getElementById('myTextArea').value
   
-      db.collection('users').doc(docId).update({
-        Name: titleEdit,
-        Email: titleEdit2,
-        Role: titleEdit3
+      db.collection('posts').doc(docId).update({
+        title: titleEdit,
+        content: textArea
       })
       .then(function (){
   

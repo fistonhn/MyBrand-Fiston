@@ -13,10 +13,7 @@
         <div> <a href="../index.html"><img src="../assets/mybrandLogo.png" alt="logo"  width="120" height="120" /></a></div>
         <h2 id="home-login"><a href="../index.html">Home</a></h2>
         <h2 id="Tutorials"><a href="../html/myblog.html">MyBlog</a></h2>
-        <h2 id="Portfolio"><a href="../html/portfolio.html">Portfolio</a></h2>
-        <h2 id="Services"><a href="../html/services.html">Services</a></h2>
         <h2 id="About"><a href="../html/about.html">About</a></h2>
-        <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
         <div onclick="myFunction(this)" class="menu-container" >
           <div class="bar1"></div>
           <div class="bar2"></div>
@@ -28,10 +25,7 @@
       <div id="list-menu">
         <h2 id="About"><a href="../index.html">Home</a></h2>
         <h2 id="Tutorials"><a href="../html/myblog.html">MyBlog</a></h2>
-        <h2 id="Portfolio"><a href="../html/portfolio.html">Portfolio</a></h2>
-        <h2 id="Services"><a href="../html/services.html">Services</a></h2>
         <h2 id="About"><a href="../html/about.html">About</a></h2>
-        <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
       </div>
       
       <div class="contact-container">
@@ -39,44 +33,24 @@
             <img src="../assets/kicukiro sector.jpg" width="360px" height="270px" />
             <div class="OfficeH">Get in touch</div>
             <p class="pencilsP">Office hours are 9am to 5pm on weekdays. <br> We are based in Kicukiro, Co. Kigali, Rwanda.</p>
-
-            <div class="item1-sub">
-              <img src="../assets/meOnHomePage.png" width="150" height="150" />
-              <div class="OfficeH">Ready to get started?</div>
-              <p class="pencilsP">Please fill out the project planner to <br> 
-                get a quote based on your project <br> 
-                requirements. Once submitted, we will <br> 
-                get in touch with you as soon as <br> 
-                possible to provide you with a quote <br> and to get started on your project.</p>
-              <button  class="pro-btn" >Project Planner <i id="viewIcon" class="fa fa-chevron-circle-right"></i></button>
-            </div>          
         </div>
         <div class="item2">
             <p class="form-header-contact">Have a question? Please enquire below </p>
             <form id="contact-form"> 
                 <div class="form-control">
-                  <input type="text" class="form-input-contact" placeholder="Name" id="contact-name" >
+                  <input type="text" class="form-input-contact" placeholder="Name" id="contact-name" required>
                 </div>
+                <div class="alert-name">Name must be filled out </div> 
                 <div class="form-control">
-                    <input type="email" class="form-input-contact" placeholder="Email" id="contact-email" >
+                    <input type="email" class="form-input-contact" placeholder="Email" id="contact-email" required>
                 </div>
+                <div class="alert-email">Email must be filled out and should be a valid email! </div> 
                 <div class="form-control">
-                    <input type="text" class="form-input-contact" placeholder="Website" id="contact-website">
+                    <input type="text" class="form-input-contact-message" placeholder="Message" id="contact-message" required>
                 </div>
-                <div class="form-control">
-                  <input type="number" class="form-input-contact" placeholder="Phone" id="contact-phone">
-                </div>
-                <div class="form-control">
-                    <input type="text" class="form-input-contact-message" placeholder="Message" id="contact-message" >
-                </div>
+                <div class="alert-message">Message must be filled out </div> 
                 <div class="alert">Your message has been sent</div> 
-                <div class="form-control">                                
-                  <p class="form-privacy-contact">By using this form you agree with the storage and handling of your data by this website. Please  <span id="privacy">read our Privacy Policy</span> for more information on how we handle your data. </p>
-                </div> 
-                <div class="checkbox">
-                  <label class="check-label">I agree</label>
-                  <input class="check-input" type="checkbox" value="true"  tabindex="7" class>
-                </div>
+
                 <button onclick="submitForm();  return false;"  class="enquire-btn" >Enquire</button>
             </form>         
         </div>
@@ -93,18 +67,9 @@
             <i id="bg-lnkin" class="fa fa-linkedin"></i>
           </div>
           <div class="line">
-            <p>Home : </p>
-            <p>: Portfolio :  </p>
-            <p>: Services :</p>
-            <p>: About :</p>
-            <p>: Resources :</p>
-            <p>: Tutorials :</p>
-            <p>: Contact</p>
-          </div>
-          <div class="line">
-            <p>Privacy Policy :</p>
-            <p>: Cookie Policy :</p>
-            <p>: Terms & Conditions</p>
+            <p> <a class="removeDec" href="../index.html">Home :</a></p>
+            <p> <a class="removeDec" href="../html/myblog.html">: MyBlog :</a></p>
+            <p> <a class="removeDec" href="../html/about.html">: About</a></p>
           </div>
           <p class="credit">Copyright © 2020&nbsp;HN~Fiston&nbsp;•&nbsp;Kigali based Freelance Web Designer & Developer</p>
           <div class="scroolUpCt" >

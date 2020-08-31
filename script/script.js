@@ -16,21 +16,67 @@ firebase.initializeApp(firebaseConfig);
  
   // contact page
 
-function submitForm(e) {
+  window.localStorage.removeItem('email');
+
+function submitForm() {
   
-    // e.preventDefault();
     const userName = getInputVal('contact-name');
     const userEmail = getInputVal('contact-email');
-    const userWebsite = getInputVal('contact-website');
-    const userPhone = getInputVal('contact-phone');
     const userMessage = getInputVal('contact-message');
+
+
+
+    if (userName == "") {
+
+      // alert("Name must be filled out");
+      document.querySelector('.alert-name').style.display = 'block';
+      setTimeout(function(){
+        
+        document.querySelector('.alert-name').style.display = 'none';
+        
+    },3000);
+
+      return false;
+    }
+
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
+    if (!validateEmail(userEmail)) {
+
+      // alert("email is not allowed to be empty and should be a valid email!");
+      document.querySelector('.alert-email').style.display = 'block';
+
+      setTimeout(function(){
+        
+        document.querySelector('.alert-email').style.display = 'none';
+        
+    },3000);
+
+      return false;
+    }
+
+    if (userMessage == "") {
+
+      // alert("message must be filled out");
+      document.querySelector('.alert-message').style.display = 'block';
+
+      setTimeout(function(){
+        
+        document.querySelector('.alert-message').style.display = 'none';
+        
+    },3000);
+
+      return false;
+    }
+
+
 
 
     db.collection('messages').doc().set({
       name: userName,
       email: userEmail,
-      website: userWebsite,
-      phone: userPhone,
       message: userMessage
     })
     .then(function (){
@@ -42,7 +88,7 @@ function submitForm(e) {
         
                 document.querySelector('.alert').style.display = 'none';
                 
-                document.getElementById('contact-form').reset();
+                window.location.reload()
         
             },3000);
     })
@@ -69,15 +115,49 @@ function submitForm(e) {
     const userEmail = getInput('email-signup');
     const userPassword = getInput('password-signup');
 
+
+
+    
+    if (userName == "") {
+
+      alert("Name must be filled out");
+      return false;
+    }
+
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
+    if (!validateEmail(userEmail)) {
+
+      alert("email is not allowed to be empty and should be a valid email!");
+
+      return false;
+    }
+
+    if (userPassword.length < 6) {
+
+      alert("password must be filled out and least 6 characters long.");
+      return false;
+    }
+
+
+
+
+
+
+
     auth.createUserWithEmailAndPassword(userEmail, userPassword).then(cred => {
       
       return db.collection('users').doc(cred.user.uid).set({
         Name: userName,
-        Role: 'guest'
+        Role: 'guest',
+        Email: userEmail
       });
 
     }).then(()=>{
-      const modal = document.getElementById('signupForm').reset();
+      window.localStorage.setItem("email", userEmail);
+      document.getElementById('signupForm').reset();
 
       window.location.href = "../html/guest.html";
     })
