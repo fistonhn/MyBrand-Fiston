@@ -14,8 +14,7 @@
       <nav>
         <div> <a href="../index.html"><img src="../assets/mybrandLogo.png" alt="logo" width="160" height="160" /></a></div>
         <h2 id="home-login"><a href="../index.html">Home</a></h2>
-        <h2 id="Portfolio"><a href="../html/portfolio.html">Portfolio</a></h2>
-        <h2 id="Services"><a href="../html/services.html">Services</a></h2>
+        <h2 id="home-login"><a href="../html/myblog.html">MyBlog</a></h2>
         <h2 id="About"><a href="../html/about.html">About</a></h2>
         <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
         <h2 id="Contact">  <button onclick="logout()" class="joinus-btn" >Logout</button></h2>
@@ -28,9 +27,8 @@
       </nav> 
 
       <div id="list-menu">
-        <h2 id="About"><a href="../index.html">Home</a></h2>
-        <h2 id="Portfolio"><a href="../html/portfolio.html">Portfolio</a></h2>
-        <h2 id="Services"><a href="../html/services.html">Services</a></h2>
+        <h2 id="About"><a href="../index.html">Home</a></h2>        
+        <h2 id="home-login"><a href="../html/myblog.html">MyBlog</a></h2>
         <h2 id="About"><a href="../html/about.html">About</a></h2>
         <h2 id="Contact"><a href="../html/contact.html">Contact</a></h2>
         <h2 id="Contact">  <button onclick="logout()" class="joinus-btn" >Logout</button></h2>
@@ -72,19 +70,26 @@
           
 
 
-            <!-- The Modal editing post -->
+            <!-- The Modal editing user -->
               <div id="myModalEditing" class="modal">
                     <div class="modal-content">
                         <span id="closeEditing" class="closeEdit">&times;</span>
                 
                         <div class="recent-post">
                             <div>
-                                <input id="titleEdit" class="edit-title" type="text" >
-                                <textarea id="myTextArea" class="editing-textarea" cols="100" rows="10">
+
+                               <label class="editLebel">Name: </label><br>                               
+                               <input id="titleEdit" class="edit-title" type="text" >
+
+                               <label class="editLebel"> Email: </label><br> 
+                               <input id="titleEdit2" class="edit-title" type="text" >
+
+                               <label class="editLebel"> Role: </label><br> 
+                               <input id="titleEdit3" class="edit-title" type="text" >
                                   
                                 </textarea>
-                                <div class="alert-updating">Post successful updated </div> 
-                                <button onclick="submitUpdate(event);  return false;" class="updating-btn ">Update post<i id="viewIcon" class="fa fa-chevron-circle-right"></i></button>
+                                <div class="alert-updating">User successful updated </div> 
+                                <button onclick="submitUpdate(event);  return false;" class="updating-btn ">Update user<i id="viewIcon" class="fa fa-chevron-circle-right"></i></button>
                             </div>        
                         </div>
                     </div>        
@@ -108,13 +113,15 @@
         <table class="posts">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Content</th>
+              <th>Id</th>
+              <th>Names</th>
+              <th>Email</th>
+              <th>Role</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody id="tableBody">
-            <div class="alert-deleting ">Post successful deleted</div>
+            <div class="alert-deleting ">User successful deleted</div>
           </tbody>
         </table>
       </div>
@@ -128,18 +135,10 @@
             <i id="bg-lnkin" class="fa fa-linkedin"></i>
           </div>
           <div class="line">
-            <p>Home : </p>
-            <p>: Portfolio :  </p>
-            <p>: Services :</p>
-            <p>: About :</p>
-            <p>: Resources :</p>
-            <p>: Tutorials :</p>
-            <p>: Contact</p>
-          </div>
-          <div class="line">
-            <p>Privacy Policy :</p>
-            <p>: Cookie Policy :</p>
-            <p>: Terms & Conditions</p>
+            <p> <a class="removeDec" href="../index.html">Home :</a></p>
+            <p> <a class="removeDec" href="../html/myblog.html">: MyBlog :</a></p>
+            <p> <a class="removeDec" href="../html/about.html">: About</a></p>
+            <p> <a class="removeDec" href="../html/contact.html">: Contact</a></p>
           </div>
           <p class="credit">Copyright © 2020&nbsp;HN~Fiston&nbsp;•&nbsp;Kigali based Freelance Web Designer & Developer</p>
           <div class="scroolUpCt" >
